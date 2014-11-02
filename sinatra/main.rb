@@ -8,7 +8,27 @@ get '/vote' do
 end
 
 post '/result' do
-  log.puts "#{params[:data]}"
-  @title = "投票結果"
-  erb :result
+  email = params[:data][:Member][:email]
+  password = params[:data][:Member][:password]
+
+  isUser = 0
+  File.open(File.expand_path("#{settings.root}/configs", __FILE__), "r") do |io|
+    io.each do |line|
+      next unless line.match(/.+@.+:.+/)
+      tmp = line.split(":", 3)
+
+      if email == tmp[0] && password == tmp[1]
+        isUser = 1
+      end
+
+    end
+  end
+
+  if isUser == 1
+    log.puts "#{email}:#{password}"
+    @title = "投票結果"
+    erb :result
+  else
+    erb :error
+  end
 end
