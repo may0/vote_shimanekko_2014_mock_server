@@ -15,9 +15,8 @@ post '/result' do
   File.open(File.expand_path("#{settings.root}/configs", __FILE__), "r") do |io|
     io.each do |line|
       next unless line.match(/.+@.+:.+/)
-      tmp = line.split(":", 3)
-
-      if email == tmp[0] && password == tmp[1]
+      tmp = line.split(":", 2)
+      if email == tmp[0].chomp && password == tmp[1].chomp
         isUser = 1
       end
 
