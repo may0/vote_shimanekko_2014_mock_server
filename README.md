@@ -22,7 +22,12 @@ email@example.com:password:ユーザエージェント
 
 
 ####モックサーバー側の設定
-1. しまねっこ投票アプリにつくった*configs*をコピーして*configs.sample*と置き換えます
+1.  *configs.sample* を
+*configs* にリネームし、
+しまねっこ投票アプリの*configs*に書いたのと同様の
+emailとpassword(アカウント情報)を
+email@example.com:password
+の書式で書き込みます。
 
 2. ターミナルを立ち上げ、このファイルのあるディレクトリの一つ下のsinatraディレクトリまで移動します
 
