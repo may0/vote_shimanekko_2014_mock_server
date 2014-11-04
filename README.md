@@ -1,4 +1,4 @@
-＃ [ゆるキャラグランプリ2014](http://www.yurugp.jp/)
+# [ゆるキャラグランプリ2014](http://www.yurugp.jp/)
 の投票受付をするモックサーバーです
 
 ####しまねっこ投票アプリ側の設定
@@ -22,9 +22,16 @@ email@example.com:password:ユーザエージェント
 
 
 ####モックサーバー側の設定
-1. ターミナルを立ち上げ、このファイルのあるディレクトリの一つ下のsinatraディレクトリまで移動します
+1.  *configs.sample* を
+*configs* にリネームし、
+しまねっこ投票アプリの*configs*に書いたのと同様の
+emailとpassword(アカウント情報)を
+email@example.com:password
+の書式で書き込みます。
 
-2. ターミナルで「bundle exec ruby main.rb」を実行します。
+2. ターミナルを立ち上げ、このファイルのあるディレクトリの一つ下のsinatraディレクトリまで移動します
+
+3. ターミナルで「bundle exec ruby main.rb」を実行します。
 
 
 両方の設定が終わったらしまねっこ投票アプリ(vote.app)を起動します
