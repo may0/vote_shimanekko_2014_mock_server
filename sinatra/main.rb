@@ -2,7 +2,7 @@ require 'sinatra'
 require './user.rb'
 require './vote.rb'
 
-File.open(File.expand_path("#{settings.root}/log/#{Time.now.strftime '%Y%m%d'}.log", __FILE__), "a")
+File.open(File.expand_path("#{settings.root}/log/#{Time.now.strftime '%Y%m%d'}.log", __FILE__), "a").close()
 
 get '/vote' do
   @title = "投票"
